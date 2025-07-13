@@ -4,9 +4,10 @@ const config = require('./utils/config')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
 const notesRouter = require('./controllers/notes')
+const supertest = require("supertest")
 
 const app = express()
-
+const api = supertest(app)
 logger.info('connecting to', config.MONGODB_URI)
 
 mongoose
