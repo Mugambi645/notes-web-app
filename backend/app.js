@@ -5,7 +5,7 @@ const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
 const notesRouter = require('./controllers/notes')
 const supertest = require("supertest")
-
+const loginRouter = require("./controllers/login")
 // user Router
 const usersRouter = require("./controllers/users")
 
@@ -34,6 +34,6 @@ app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
 
-
+app.use("/api/login", loginRouter)
 
 module.exports = app
